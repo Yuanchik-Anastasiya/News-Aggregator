@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     id("kotlin-kapt")
     id("androidx.room")
+    id ("dagger.hilt.android.plugin")
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
     alias(libs.plugins.androidx.navigation.safeargs)
@@ -76,6 +77,8 @@ dependencies {
 
     // coil
     implementation(libs.coil)
+    implementation(libs.coil.compose)
+
 
     // room
     implementation(libs.androidx.room.runtime)
@@ -86,10 +89,12 @@ dependencies {
     // hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     // navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.navigation.compose)
 
     // coroutine
     implementation(libs.kotlinx.coroutines.core)
@@ -97,4 +102,10 @@ dependencies {
 
     // recycler
     implementation(libs.androidx.recyclerview)
+
+
+// Material 3
+    implementation(libs.material3)
+
+    implementation(libs.androidx.compose.bom.v20231001)
 }
